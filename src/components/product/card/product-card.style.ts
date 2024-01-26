@@ -1,4 +1,5 @@
-import styled from "styled-components";export const Wrapper = styled.div({
+import styled from "styled-components";
+export const Wrapper = styled.div({
   display: "flex",
   flexDirection: "row",
   margin: "auto",

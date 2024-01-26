@@ -1,5 +1,6 @@
 import React, { memo, FC } from "react";import { ProductModel } from "../../../models/product.model";
 import { Wrapper, TextWrapper, Image, Title } from "./product-card.style.ts";
+import Description from "../Description.tsx";
 
 type ProductCardProps = ProductModel;
 
@@ -14,8 +15,8 @@ const ProductCard: FC<ProductCardProps> = ({
       <Wrapper>
         <Image src={image} alt="img" />
         <TextWrapper>
-          <div>{title}</div>
-          <p>{description}</p>
+          <Title>{title}</Title>
+          <Description text={description!} maxLength={150} />
         </TextWrapper>
         <TextWrapper>
           <div>{price}$</div>
