@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import noImage from "../../../assets/icons/noImage.svg";
+
 export const Wrapper = styled.div({
   display: "flex",
   flexDirection: "row",

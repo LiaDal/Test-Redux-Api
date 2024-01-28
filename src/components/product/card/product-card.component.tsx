@@ -13,7 +13,7 @@ const ProductCard: FC<ProductCardProps> = ({
   return (
     <>
       <Wrapper>
-        <Image src={image} alt="img" />
+        <Image src={image} alt="Not found" />
         <TextWrapper>
           <Title>{title}</Title>
           <Description text={description!} maxLength={150} />

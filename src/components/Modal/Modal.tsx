@@ -1,7 +1,10 @@
-import React, { FC, ReactNode } from "react";
-import { Title } from "../product/card/product-card.style.ts";
-import { ModalWrapper, ModalContent, ModalTitle } from "./Modal.style.ts";
-import Button from "../Button.tsx";
+import React, { FC, ReactNode } from "react";import { Title } from "../product/card/product-card.style.ts";
+import {
+  ModalWrapper,
+  ModalContent,
+  ModalTitle,
+  CloseButton,
+} from "./Modal.style.ts";
 
 interface ModalProps {
   title: string;
@@ -17,11 +20,11 @@ const Modal: FC<ModalProps> = ({ title, visible, onClose, children }) => {
 
   return (
     <>
-      <ModalWrapper>
-        <ModalContent>
+      <ModalWrapper onClick={onClose}>
+        <ModalContent onClick={(e) => e.stopPropagation()}>
           <ModalTitle>
             <Title>{title}</Title>
-            <button onClick={onClose}>x</button>
+            <CloseButton onClick={onClose}>x</CloseButton>
           </ModalTitle>
           {children}
         </ModalContent>

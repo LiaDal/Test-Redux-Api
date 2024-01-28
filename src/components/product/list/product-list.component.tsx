@@ -1,5 +1,6 @@
-import React, { memo, FC, useState, useEffect } from "react";import ProductCard from "../card/product-card.component.tsx";
+import React, { memo, FC } from "react";import ProductCard from "../card/product-card.component.tsx";
 import { ProductModel } from "../../../models/product.model";
+import { WrapperList } from "./product-list.style.ts";
 
 interface ProductListProps {
   products: ProductModel[];

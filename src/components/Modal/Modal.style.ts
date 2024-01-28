@@ -1,25 +1,25 @@
 import styled from "styled-components";export const ModalContent = styled.div({
-  // margin: "auto",
-  // width: "50%",
-  borderRadius: "2rem",
-  position: "relative",
-  backgroundColor: "white",
   padding: "2rem",
-  opacity: 1,
+  backgroundColor: "white",
+  position: "relative",
+  borderRadius: "8px",
+  boxShadow: "0 16px 24px 0 rgba(0, 0, 0, 0.2)",
+  border: "1px solid rgba(255, 255, 255, 0.18)",
+  display: "flex",
+  flexDirection: "column",
 });
 
 export const ModalWrapper = styled.div({
-  // opacity: 0.8,
-  padding: "2rem",
   position: "fixed",
-  top: 0,
   left: 0,
-  width: "100%",
-  height: "100%",
-  background: "gray",
+  right: 0,
+  top: 0,
+  bottom: 0,
   display: "flex",
+  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+  backdropFilter: "blur(8px)",
 });
 
 export const ModalHeader = styled.div({
@@ -35,4 +35,16 @@ export const ModalTitle = styled.div({
   gap: "8rem",
   padding: 10,
   margin: "auto",
+});
+
+export const CloseButton = styled.button({
+  color: "white",
+  backgroundColor: "black",
+  "&:hover": {
+    background: "#C0C0C0",
+  },
+  width: 20,
+  height: 20,
+  borderRadius: 500,
+  border: "none",
 });

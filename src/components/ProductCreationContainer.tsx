@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import CreateButton from "./CreateButton/CreateButton.tsx";
 import Modal from "./Modal/Modal.tsx";
 import ProductCreationForm from "./ProductCreationForm .tsx";
@@ -10,6 +10,7 @@ import { setProductsAction } from "../store/product/product.slice.ts";
 
 const ProductCreationContainer: FC = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [list, setList] = useState();
   const productList = useSelector(selectProducts);
   const dispatch = useDispatch();
 
@@ -25,8 +26,6 @@ const ProductCreationContainer: FC = () => {
     try {
       const response = await createProductApi(product);
       dispatch(setProductsAction([response.data, ...productList]));
-      console.log(response.data);
-      console.log(productList);
       handleModalClose();
     } catch (error) {
       console.error("Error creating product:", error);
